@@ -1,0 +1,7 @@
+
+@media all and (max-width:991px) {
+    Nav, .navbar-nav {
+        padding: 10px;
+        border-top: 1px solid #E5E9EF;
+    }
+}

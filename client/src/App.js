@@ -3,11 +3,12 @@ import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
-
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <div>
+      <Navbar />
       <Header />
       <Switch>
         <Route exact path="/Home" component={Home} />
