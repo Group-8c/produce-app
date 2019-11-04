@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 import './style.css'
 
 export class SignIn extends Component {
@@ -12,8 +12,8 @@ export class SignIn extends Component {
 
     render() {
         return (
-            <div>
-                <div className="container">
+            <Card>
+                <Card.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
@@ -32,8 +32,8 @@ export class SignIn extends Component {
                             Submit
                         </Button>
                     </Form>
-                </div>
-            </div>
+                </Card.Body>
+            </Card>
         )
     }
 }
