@@ -5,6 +5,7 @@
         border-top: 1px solid #E5E9EF;
     }
 }
+
 .navbar {
     border: $none;
     font-size: $font-size-base;
