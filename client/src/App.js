@@ -4,6 +4,8 @@ import Home from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 //import Header from "./components/Header/Header"
 import Navbar from './components/Navbar'
+import Register from './components/Register';
+import SignIn from './components/SignIn';
 
 const App = () => {
   return (
@@ -11,6 +13,8 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path="/Home" component={Home} />
+        <Route path="/Register" component={Register} />
+        <Route path="/Signin" component={SignIn} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
