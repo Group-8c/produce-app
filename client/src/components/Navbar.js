@@ -18,9 +18,9 @@ export default () => {
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">
                         <Link className="topnav-link" class="nav-link" to='/Home'>Home <span class="sr-only">(current)</span></Link>
-                        <a className="topnav-link" class="nav-link" href='/Home#About'>About <span class="sr-only">(current)</span></a>
-                        <a className="topnav-link" class="nav-link" href='/Home#Services'>Services <span class="sr-only">(current)</span></a>
-                        <a className="topnav-link" class="nav-link" href='/Home#Contact'>Contact <span class="sr-only">(current)</span></a>
+                        <Link className="topnav-link" class="nav-link" to='/About'>About <span class="sr-only">(current)</span></Link>
+                        <Link className="topnav-link" class="nav-link" to='/Services'>Services <span class="sr-only">(current)</span></Link>
+                        <Link className="topnav-link" class="nav-link" to='/Contact'>Contact <span class="sr-only">(current)</span></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
