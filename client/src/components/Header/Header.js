@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div className='topnav'>
+        <div className='topnav' class="main">
             {/* Logo */}
             <Link id="logo-link" to="/">
                 <img className="topnav-logo" src={ "/logo192.png" } alt="React logo" />
