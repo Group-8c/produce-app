@@ -2,9 +2,9 @@
     This file holds static data for testing the featured items component.
 */
 
-import orange from '../../assets/orange.jpg';
-import apple from '../../assets/apple.jpg';
-import bananas from '../../assets/bananas.jpg';
+import orange from '../../components/images/orange.jpg';
+import apple from '../../components/images/apple.jpg';
+import bananas from '../../components/images/bananas.jpg';
 
 export default [
     {

@@ -5,10 +5,9 @@ import About from "./views/About/About"
 import Services from "./views/Services/Services"
 import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
-//import Header from "./components/Header/Header"
 import Navbar from './components/Navbar'
-import Register from './components/Register';
-import SignIn from './components/SignIn';
+import Register from './views/Register';
+import SignIn from './views/SignIn';
 import Footer from './Footer'
 
 const App = () => {

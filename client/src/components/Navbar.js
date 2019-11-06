@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Searchbar from './Searchbar'
 import logo1 from './images/logo1.png'
-import './style.css'
+import '../views/style/style.css'
 
 export default () => {
     return (
