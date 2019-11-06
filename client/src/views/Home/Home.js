@@ -12,27 +12,12 @@ import Carousel from './Carousel';
 function Home() {
     return (
         <div className="App">
-            <header className="App-header">
-                <div className="App-header hero-image">
-                
-                    <div className="hero-text">
-                        <h1>Welcome</h1>
-                    </div> 
+            <header className="home-head hero-image">
+                <div className="hero-text">
+                    <h1>Featured Items</h1>
                 </div>
             </header>
-            <div>
-                <b style={{fontSize: '3rem'}}>Featured Items</b>
-                <Carousel />
-            </div>
-           
-
-            {/*}
-            moved to App.js
-
-            <About />
-            <Services />
-            <Contact />
-            */}
+            <Carousel />          
         </div>
     );
 }

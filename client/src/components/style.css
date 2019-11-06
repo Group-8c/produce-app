@@ -6,12 +6,9 @@
     }
 }
 .navbar {
-    border: $none;
-    font-size: $font-size-base;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     padding: 0;
-    background: $white-color;
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
 }
 
@@ -20,4 +17,45 @@
     text-align: left;
     padding: 25px;
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.transparent-bg {
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    text-align: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: gray;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: gray;
+}
+
+.carousel-indicators li {
+    background-color: gray;
+}
+
+.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+    color: black;
 }

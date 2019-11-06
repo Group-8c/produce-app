@@ -1,8 +1,15 @@
 import React from 'react';
 
-function Services() {
+const footerStyle = {
+    position: "absolute",
+    left: "0",
+    bottom: "0",
+    width: "100%",
+}
+
+function Footer() {
     return (
-        <div id="Contact">
+        <div id="Contact" style={footerStyle}>
             <div className="masthead-followup row m-0">
                 <div className="col-12 col-md-4 p-3 p-md-5">
                     {/* image/icon here */}
@@ -28,4 +35,4 @@ function Services() {
     );
 }
 
-export default Services;
+export default Footer;

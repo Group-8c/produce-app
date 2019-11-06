@@ -9,6 +9,7 @@ import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
 import Register from './components/Register';
 import SignIn from './components/SignIn';
+import Footer from './Footer'
 
 const App = () => {
   return (
