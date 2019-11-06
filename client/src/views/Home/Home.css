@@ -7,8 +7,18 @@
 }
 
 .App-header {
-    background-color: #282c34;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.home-head {
+    min-height: 50vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,3 +30,36 @@
 .App-link {
     color: #09d3ac;
 }
+
+.jumbotron {
+    background-color: white;
+}
+
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../components/images/agriculture-beetroot-beets-533360.jpg');
+  
+    /* Set a specific height */
+    height: auto;
+    width: 100%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  #Contact {
+      background-color: gainsboro;
+  }
