@@ -6,6 +6,7 @@ import logo1 from './images/logo1.png'
 import '../views/style/style.css'
 
 export default () => {
+
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Navbar.Brand><Link id="logo-link" to="/"><img className="topnav-logo" width="65" alt="logo" src={logo1} /></Link></Navbar.Brand>
