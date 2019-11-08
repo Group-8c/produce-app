@@ -3,7 +3,7 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser')
-    const config = require('config');
+    //const config = require('config');
 
 module.exports.init = () => {
     /* 
@@ -12,7 +12,9 @@ module.exports.init = () => {
     */
 
     //get database uri
-    const db = config.get('mongoURI');
+    //const db = config.get('mongoURI');
+    const db = require('./config.js').db.uri
+
 
     mongoose.connect(process.env.DB_URI || db, {
         useNewUrlParser: true,
@@ -32,8 +34,8 @@ module.exports.init = () => {
     app.use(bodyParser.json());
 
     // add a router
-    app.use('/api/users', require('../server/routes/api/users'));
-    app.use('/api/auth', require('../server/routes/api/auth'));
+    app.use('/api/users', require('../routes/api/users'));
+    app.use('/api/auth', require('../routes/api/auth'));
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

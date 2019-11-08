@@ -5,7 +5,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-const config = require('config');
 
 const router = express.Router();
 
@@ -16,6 +15,7 @@ const Client = require('../../models/Client');
 // @access Public 
 router.post('/', (req, res) => {
     const { firstName, lastName, email, password } = req.body;
+    const jwtSecret = require('../../config/config.js').jwtSecret;
 
     //Check for required information
     if(!firstName || !lastName || !email || !password) {
@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
                     .then(user => {
                         jwt.sign(
                             { id: user.id },
-                            config.get('jwtSecret'),
+                            jwtSecret,
 
                             //expires in 1 hour
                             { expiresIn: 3600 },

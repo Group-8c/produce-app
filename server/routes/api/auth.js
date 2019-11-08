@@ -1,6 +1,5 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const config = require('config');
 const jwt = require('jsonwebtoken');
 const auth = require('../../middleware/auth');
 
@@ -15,6 +14,7 @@ const Client = require('../../models/Client');
 // @access Public 
 router.post('/', (req, res) => {
     const { email, password } = req.body;
+    const jwtSecret = require('../../config/config.js').jwtSecret;
 
     //simple validation
     if(!email || !password) {
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 
                     jwt.sign(
                         { id: user.id },
-                        config.get('jwtSecret'),
+                        jwtSecret,
                         { expiresIn: 3600 },
                         (err, token) => {
                             if(err) throw err;
