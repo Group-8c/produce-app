@@ -5,6 +5,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
+const config = require('config');
 
 const router = express.Router();
 
@@ -42,16 +43,11 @@ router.post('/', (req, res) => {
                     .then(user => {
                         jwt.sign(
                             { id: user.id },
-
-                            
-                            /*
-                                this may not work, we may have to install the config package
-                                and do "config.get('jwtSecret')"
-                            */
-                            require('../../config/config').jwtSecret,
+                            config.get('jwtSecret'),
 
                             //expires in 1 hour
                             { expiresIn: 3600 },
+
                             (err, token) => {
                                 if(err) throw err;
                                 res.json({
