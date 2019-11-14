@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Searchbar from './Searchbar'
 import logo1 from './images/logo1.png'
 import '../views/style/style.css'
 
@@ -12,7 +11,6 @@ export default () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="navbar-nav ml-auto order-2">
-                    <Searchbar />
                     <Link className="topnav-link" class="nav-link" to='/Signin'>Sign in <span class="sr-only">(current)</span></Link>
                     <Link className="topnav-link" class="nav-link" to='/Register'>Register <span class="sr-only">(current)</span></Link>
                 </Nav>
