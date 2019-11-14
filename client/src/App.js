@@ -8,7 +8,7 @@ import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
 import Register from './views/Register';
 import SignIn from './views/SignIn';
-import Footer from './Footer'
+//import Footer from './Footer'
 
 const App = () => {
   return (
