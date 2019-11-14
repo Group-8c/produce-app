@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Card, Row, Alert } from 'react-bootstrap';
+import { Form, Button, Card, Row, Col, Alert } from 'react-bootstrap';
 
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
@@ -63,11 +63,9 @@ export class Register extends Component {
             <div className="App">
                 <div className="home-head hero-image"/>
                 <Row className="hero-text">
-                    <Card className="card-bg">
-                        <Card.Title align="center">Register</Card.Title>
+                    <Card className="card-bg" style={{ width: '30rem' }}>
+                        <Card.Header align="center">Register</Card.Header>
                         <Card.Body>
-
-
                             {
                                 this.state.msg ? (
                                     <Alert variant="danger">{ this.state.msg }</Alert>
@@ -75,31 +73,31 @@ export class Register extends Component {
                             }
 
                             <Form onSubmit={this.onSubmit}>
-                                <Form.Group>
+                                <Form.Row><Form.Group as={Col}>
                                     <Form.Label>First Name</Form.Label>
                                     <Form.Control 
                                         type = "text" 
                                         name = "firstName"
                                         id = "firstName"
-                                        placeholder="Enter your first name"
+                                        placeholder="First Name"
                                         onChange={this.onChange}
-                                    />
-
+                                    /></Form.Group>
+                                    <Form.Group as={Col}>
                                     <Form.Label>Last Name</Form.Label>
                                     <Form.Control 
                                         type = "text" 
                                         name = "lastName"
                                         id = "lastName"
-                                        placeholder="Enter your last name"
+                                        placeholder="Last Name"
                                         onChange={this.onChange}
                                     />
-                                </Form.Group>
+                                </Form.Group></Form.Row>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
                                     <Form.Control 
                                         type = "email" 
                                         name = "email"
-                                        placeholder="Enter email"
+                                        placeholder="Email"
                                         onChange={this.onChange}
                                     />
                                 </Form.Group>
@@ -109,7 +107,7 @@ export class Register extends Component {
                                     <Form.Control 
                                         type = "password"
                                         name = "password"
-                                        placeholder="Enter a password..."
+                                        placeholder="Password"
                                         onChange={this.onChange}
                                     />
                                 </Form.Group>
