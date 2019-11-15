@@ -8,7 +8,8 @@ import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
 import Register from './views/Register';
 import SignIn from './views/SignIn';
-//import Footer from './Footer'
+import Footer from './Footer'
+import ProducePage from './views/Produce/Produce'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
+        <Route exact path="/Produce" component={ProducePage} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

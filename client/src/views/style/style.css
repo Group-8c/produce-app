@@ -1,15 +1,14 @@
 
-@media all and (max-width:991px) {
-   .navbar-nav {
-        padding: 10px 10px;
-        border-top: 1px solid #E5E9EF;
-    }
+.bg-dark {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  background: rgba(0, 0, 0, .1) !important;
+  padding: 0;
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
 }
-.navbar {
-    transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-    padding: 0;
-    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+
+.bg-dark.scrolled {
+  background: rgba(58, 57, 57, 1) !important;
 }
 
 .card-bg {
