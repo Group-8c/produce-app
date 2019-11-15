@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Register from './auth/Register';
 import SignIn from './auth/SignIn';
 import Footer from './Footer'
+import ProducePage from './views/Produce/Produce'
 
 
 import { Provider } from 'react-redux';
@@ -30,6 +31,7 @@ const App = () => {
         <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
+        <Route exact path="/Produce" component={ProducePage} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
