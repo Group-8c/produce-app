@@ -1,7 +1,7 @@
 import React from 'react'
 import ProduceItem from './ProduceItem'
 import Search from '../../components/Searchbar'
-import featItems from '../Home/featItems'
+import data from '../data/data'
 
 class Produce extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class Produce extends React.Component {
                     </div>
                 </header>
                 <ProduceItem
-                    data={featItems}
+                    data={data}
                     filterText={this.state.filterText}
                 />
             </div>
