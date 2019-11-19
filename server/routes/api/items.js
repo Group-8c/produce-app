@@ -13,7 +13,7 @@ const Item = require('../../models/Item');
 // @route  GET api/items
 // @desc   GET all items
 // @access Public
-router.get('/items', (req, res) => {
+router.get('/', (req, res) => {
     Item.find()
         .then(items => res.json(items))
         .catch(err => {
@@ -25,7 +25,7 @@ router.get('/items', (req, res) => {
 // @route  POST api/items
 // @desc   Add item
 // @access private
-router.post('/items', (req, res) => {
+router.post('/', (req, res) => {
     const newItem = new Item({
         name: req.body.name,
         price: req.body.price

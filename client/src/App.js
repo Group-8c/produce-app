@@ -34,8 +34,8 @@ const App = () => {
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
         <Route exact path="/Produce" component={ProducePage} />
-        <Route exact path="/Admin" component={Admin}></Route>
-        <Route exact path="/Admin/users" component={users}></Route>
+        <Route exact path="/Admin" component={Admin} />
+        <Route exact path="/Admin/users" component={users} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
