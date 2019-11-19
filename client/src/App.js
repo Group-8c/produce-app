@@ -6,13 +6,19 @@ import Services from "./views/Services/Services"
 import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
-import Register from './views/Register';
-import SignIn from './views/SignIn';
+import Register from './auth/Register';
+import SignIn from './auth/SignIn';
 import Footer from './Footer'
 import ProducePage from './views/Produce/Produce'
 
+
+import { Provider } from 'react-redux';
+import store from './store';
+
 const App = () => {
   return (
+
+    <Provider store={store}>
     <div>
       <Navbar />
 
@@ -32,6 +38,7 @@ const App = () => {
         <Route component={NotFound}/>
       </Switch>
     </div>
+    </Provider>
   );
 }
 

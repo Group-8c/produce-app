@@ -1,0 +1,3 @@
+/*
+    This file will hold the rest api route information for items.
+*/
