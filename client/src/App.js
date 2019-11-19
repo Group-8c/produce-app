@@ -6,6 +6,7 @@ import Services from "./views/Services/Services"
 import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
+import My_Cart from "./views/My_Cart/My_Cart"
 import Register from './auth/Register';
 import SignIn from './auth/SignIn';
 import Footer from './Footer'
@@ -29,6 +30,7 @@ const App = () => {
         <Route exact path="/About" component={About} />
         <Route exact path="/Services" component={Services} />
         <Route exact path="/Contact" component={Contact} />
+        <Route exact path="/My_Cart" component={My_Cart} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
         <Route exact path="/Produce" component={ProducePage} />

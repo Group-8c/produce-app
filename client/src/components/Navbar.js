@@ -31,6 +31,7 @@ class AppNavbar extends Component {
 
         const guestLinks = (
             <Fragment>
+                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Signin'>Sign in <span className="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Register'>Register <span className="sr-only">(current)</span></Link>
             </Fragment>
