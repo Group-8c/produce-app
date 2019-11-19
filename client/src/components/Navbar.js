@@ -56,6 +56,7 @@ class AppNavbar extends Component {
                         <Link className="topnav-link nav-link" to='/About'>About <span className="sr-only">(current)</span></Link>
                         <Link className="topnav-link nav-link" to='/Services'>Services <span className="sr-only">(current)</span></Link>
                         <Link className="topnav-link nav-link" to='/Contact'>Contact <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/Produce'>Shop <span className="sr-only">(current)</span></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
