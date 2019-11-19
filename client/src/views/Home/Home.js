@@ -13,9 +13,9 @@ function Home() {
                 </div>
             </header>
             <Carousel />
-            <h3>To search all our items go to our   <Button
+             <h3>To search all our items go to our   <Button
                 variant="outline-success"
-                size="lg" href='/Produce'>Produce<span class="sr-only">(current)</span></Button>    page.</h3>    
+                size="lg"><Link to="/Produce">Produce</Link><span class="sr-only">(current)</span></Button>    page.</h3>     
         </div>
     );
 }

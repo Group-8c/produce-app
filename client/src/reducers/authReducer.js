@@ -14,6 +14,7 @@ import {
       isAuthenticated: null,
       isLoading: false,
       user: null
+      
   }
 
   export default function(state = initialState, action) {
@@ -31,7 +32,6 @@ import {
                     isLoading: false,
                     user: action.payload
                 };
-
             case LOGIN_SUCCESS:
             case REGISTER_SUCCESS:
                 localStorage.setItem('token', action.payload.token);
@@ -51,6 +51,7 @@ import {
                     ...state,
                     token: null,
                     user: null,
+                    users: null,
                     isAuthenticated: false,
                     isLoading: false
                 }

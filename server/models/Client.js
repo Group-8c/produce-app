@@ -27,16 +27,12 @@ const ClientSchema = new Schema({
     },
     address: {
         type:String,
-        //required:true,
         default:"fakeaddress"
     },
     phoneNumber: {
         type:Number,
-        //required:true,
         default:5555555555
-    },
-
-    //cart:[ItemSchema]
+    }
 });
 
 module.exports = Client = mongoose.model('client', ClientSchema);

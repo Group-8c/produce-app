@@ -66,6 +66,16 @@ router.get('/user', auth, (req, res) => {
     Client.findById(req.user.id)
         .select('-password')
         .then(user => res.json(user));
-}); 
+});
+
+
+// @route  GET api/auth/users
+// @desc   GET all users (not passwords)
+// @access private
+router.get('/users', (req, res) => {
+    
+    Client.find().select('-password').then(users => res.json(users));
+    
+});
 
 module.exports = router;

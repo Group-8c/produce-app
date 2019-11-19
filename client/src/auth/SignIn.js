@@ -56,9 +56,6 @@ export class SignIn extends Component {
         
     }
 
-    
-    
-
     render() {
         return (
             <div className="App">

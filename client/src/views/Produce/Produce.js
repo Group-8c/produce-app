@@ -4,12 +4,16 @@ import Search from '../../components/Searchbar'
 import featItems from '../Home/featItems'
 
 class Produce extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          filterText: ''
-        }
-      }
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //       filterText: ''
+    //     }
+    // }
+
+    state = {
+        filterText: ''
+    }
     
     filterUpdate(value) {
         this.setState({
