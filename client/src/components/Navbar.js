@@ -39,7 +39,7 @@ class AppNavbar extends Component {
 
         return (
             <div>
-            <Navbar bg="light" expand="lg" sticky="top">
+            <Navbar className="fixed-top" bg="dark navbar-dark" expand="lg">
                 <Navbar.Brand><Link id="logo-link" to="/"><img className="topnav-logo" width="65" alt="logo" src={logo1} /></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -49,15 +49,11 @@ class AppNavbar extends Component {
                         
                         { isAuthenticated ? authLinks : guestLinks}
 
-                        {/* <Link className="topnav-link" class="nav-link" to='/Signin'>Sign in <span class="sr-only">(current)</span></Link>
-                        <Link className="topnav-link" class="nav-link" to='/Register'>Register <span class="sr-only">(current)</span></Link> */}
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">
-                        <Link className="topnav-link nav-link" to='/Home'>Home <span className="sr-only">(current)</span></Link>
-                        <Link className="topnav-link nav-link" to='/About'>About <span className="sr-only">(current)</span></Link>
-                        <Link className="topnav-link nav-link" to='/Services'>Services <span className="sr-only">(current)</span></Link>
-                        <Link className="topnav-link nav-link" to='/Contact'>Contact <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/Home'>Featured <span className="sr-only">(current)</span></Link>
                         <Link className="topnav-link nav-link" to='/Produce'>Shop <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/About'>About <span className="sr-only">(current)</span></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

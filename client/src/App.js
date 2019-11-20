@@ -9,7 +9,7 @@ import Navbar from './components/Navbar'
 import My_Cart from "./views/My_Cart/My_Cart"
 import Register from './auth/Register';
 import SignIn from './auth/SignIn';
-import Footer from './Footer'
+import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 
 
@@ -28,8 +28,6 @@ const App = () => {
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/About" component={About} />
-        <Route exact path="/Services" component={Services} />
-        <Route exact path="/Contact" component={Contact} />
         <Route exact path="/My_Cart" component={My_Cart} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
@@ -40,6 +38,7 @@ const App = () => {
         <Route component={NotFound}/>
       </Switch>
     </div>
+    <Footer />
     </Provider>
   );
 }

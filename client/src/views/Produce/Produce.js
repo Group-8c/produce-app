@@ -24,12 +24,14 @@ class Produce extends React.Component {
                 <header className="home-head hero-image">
                     <div className="hero-text">
                         <h1>Produce</h1>
+                        <br />
                         <Search
                             filterText={this.state.filterText}
                             filterUpdate={this.filterUpdate.bind(this)}
                         />
                     </div>
                 </header>
+                <br />
                 <ProduceItem
                     data={data}
                     filterText={this.state.filterText}
