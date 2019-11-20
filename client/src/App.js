@@ -8,7 +8,7 @@ import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
 import Register from './auth/Register';
 import SignIn from './auth/SignIn';
-import Footer from './Footer'
+import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 
 
@@ -25,10 +25,8 @@ const App = () => {
       {//react-router links to static pages
       }
       <Switch>
-        <Route exact path="/Home" component={Home} />
+        <Route exact path="/Featured" component={Home} />
         <Route exact path="/About" component={About} />
-        <Route exact path="/Services" component={Services} />
-        <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />
         <Route exact path="/Produce" component={ProducePage} />
@@ -38,6 +36,7 @@ const App = () => {
         <Route component={NotFound}/>
       </Switch>
     </div>
+    <Footer />
     </Provider>
   );
 }

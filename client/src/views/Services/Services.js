@@ -15,8 +15,14 @@ function Services() {
             <div className="masthead-followup row m-0 border border-white">
                 <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                     <img src={ market } width="100%" />
-                    <h3>Service 1</h3>
-                    <p>Description</p>
+                    <h3>Delivery</h3>
+                    <p>We deliver all your fresh produce and grocery items to you fresh 
+                        from local farmers and vendors.
+                    </p>
+                    <hr className="half-rule" />
+                    <p>
+                        Bi-weekly service.
+                        Seasonal subscriptions available.</p>
                 </div>
 
                 <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">

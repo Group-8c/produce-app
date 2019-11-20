@@ -67,3 +67,13 @@
 CardDeck {
   align-content: center;
 }
+
+.produce-items {
+  width: 95%;
+  padding: 10 px;
+  margin: auto;
+}
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, .1)
+}

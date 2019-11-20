@@ -62,7 +62,7 @@ export class SignIn extends Component {
     render() {
         return (
             <div className="App">
-                <div className="home-head hero-image"/>
+                <div className="not-found hero-image"/>
                 <Row className="hero-text">
                     <Card className="card-bg" style={{ width: '30rem' }}>
                         <Card.Header align="center">Welcome</Card.Header>
