@@ -6,6 +6,7 @@ import Services from "./views/Services/Services"
 import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
+import UserNavbar from './components/UserNavbar'
 import Register from './views/Register';
 import SignIn from './views/SignIn';
 import Footer from './Footer'
@@ -14,7 +15,7 @@ import ProducePage from './views/Produce/Produce'
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <UserNavbar />
 
       {//react-router links to static pages
       }
