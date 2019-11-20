@@ -32,6 +32,10 @@ const ClientSchema = new Schema({
     phoneNumber: {
         type:Number,
         default:5555555555
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
 });
 

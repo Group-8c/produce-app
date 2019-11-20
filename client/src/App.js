@@ -7,7 +7,6 @@ import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
 import Register from './auth/Register';
-import users from './views/Admin/users';
 import Admin from './views/Admin/Admin'
 import SignIn from './auth/SignIn';
 import Footer from './Footer'
@@ -35,7 +34,6 @@ const App = () => {
         <Route exact path="/Signin" component={SignIn} />
         <Route exact path="/Produce" component={ProducePage} />
         <Route exact path="/Admin" component={Admin} />
-        <Route exact path="/Admin/users" component={users} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

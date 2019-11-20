@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import { Navbar, Nav, } from 'react-bootstrap'
+import { Navbar, Nav, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo1 from './images/logo1.png'
 import '../views/style/style.css'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Logout from '../auth/Logout';
+import Admin from '../views/Admin/Admin'
 
 class AppNavbar extends Component {
     
@@ -16,7 +17,31 @@ class AppNavbar extends Component {
 
     render() {
 
-        const { isAuthenticated, user } = this.props.auth
+        const { isAuthenticated, isAdmin, user } = this.props.auth
+
+
+         //Links an admin sees
+         const adminLinks = (
+            <Fragment>
+
+                <Nav.Link>
+                    
+                    <Link to="/Admin" className="topnav-link" class="nav-link">Admin <span class="sr-only">(current)</span>
+                        
+                    </Link>
+                </Nav.Link>
+                <Nav.Item>
+                    <span className="navbar-text" style={{marginTop: "8px"}}>
+                        <strong>{ user ? `Welcome admin` : ''}</strong>
+                    </span>
+                </Nav.Item>
+                <Nav.Link>
+                    <Logout />
+                </Nav.Link>
+            </Fragment>
+        )
+
+
 
         //Links a user sees
         const authLinks = (
@@ -48,9 +73,10 @@ class AppNavbar extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="navbar-nav ml-auto order-2">
 
-                        {//if the user is logged in, show authLinks, else show guestLinks
+                        {//if the user is logged in, show admin links if the user
+                        //is an admin, else show authLinks, else show guestLinks
                         }
-                        { isAuthenticated ? authLinks : guestLinks}
+                        { isAuthenticated ? isAdmin ? adminLinks : authLinks : guestLinks}
 
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">

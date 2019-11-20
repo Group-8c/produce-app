@@ -28,7 +28,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = new Item({
         name: req.body.name,
-        price: req.body.price
+        price: req.body.price,
+        image: req.body.image
     })
 
     newItem.save()

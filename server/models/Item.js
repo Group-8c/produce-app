@@ -19,6 +19,10 @@ const ItemSchema = new Schema({
         required:true,
         default: 0
     },
+    image: {
+        type: Object,
+        default: null
+    }
 
     // foodInfo: {
     //     isHeartHealthy:Boolean,
