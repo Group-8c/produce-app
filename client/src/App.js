@@ -25,7 +25,7 @@ const App = () => {
       {//react-router links to static pages
       }
       <Switch>
-        <Route exact path="/Featured" component={Home} />
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/About" component={About} />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/Signin" component={SignIn} />

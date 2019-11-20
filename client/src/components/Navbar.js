@@ -50,7 +50,7 @@ class AppNavbar extends Component {
 
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">
-                        <Link className="topnav-link nav-link" to='/Featured'>Featured <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/Home'>Featured <span className="sr-only">(current)</span></Link>
                         <Link className="topnav-link nav-link" to='/Produce'>Shop <span className="sr-only">(current)</span></Link>
                         <Link className="topnav-link nav-link" to='/About'>About <span className="sr-only">(current)</span></Link>
                     </Nav>
