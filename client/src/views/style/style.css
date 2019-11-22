@@ -11,6 +11,17 @@
   background: rgba(58, 57, 57, 1) !important;
 }
 
+.dropdown-toggle.btn.btn-primary {
+  color:black;
+  background-color:white;
+  
+}
+
+.checkout {
+  filter: grayscale(100%);
+  padding: 10px;
+}
+
 .card-bg {
     color: black;
     text-align: left;
