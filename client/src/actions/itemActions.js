@@ -1,7 +1,9 @@
 import axios from 'axios';
-import { ADD_ITEM } from './types';
+import { ADD_ITEM, DELETE_ITEM } from './types';
+import { tokenConfig } from './authActions';
+import { returnErrors } from './errorActions';
 
-export const addItem = ({ name, price, image }) => dispatch => {
+export const addItem = ({ name, price, image }) => (dispatch, getState) => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -15,4 +17,13 @@ export const addItem = ({ name, price, image }) => dispatch => {
             payload: res.data
         }))
         
+}
+
+export const deleteItem = (id) => (dispatch) => {
+    axios.delete(`/api/items/${id}`).then(res =>
+        dispatch({
+            type: DELETE_ITEM,
+            payload: id
+        })
+    )
 }

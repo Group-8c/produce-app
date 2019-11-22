@@ -3,7 +3,7 @@
 */
 
 const express = require('express');
-
+const auth = require('../../middleware/auth');
 //bring in the router express object
 const router = express.Router();
 
@@ -35,5 +35,16 @@ router.post('/', (req, res) => {
     newItem.save()
         .then(item => res.json(item))
 })
+
+// @route  DELETE api/items/:id
+// @desc   Delete an item
+// @access Private 
+router.delete('/:id', (req, res) => {
+    Item.findById(req.params.id)
+        .then(item => item.remove().then(() => res.json({success: true})))
+        //catch error if an id doesnt exist. send a {success: false} object with a 404 error code
+        .catch(err => res.status(404).json({success: false}));
+});
+
 
 module.exports = router;

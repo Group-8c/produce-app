@@ -14,7 +14,7 @@ export class Admin extends Component {
     }
     render() {
         return (
-           <div>
+           <div className="" >
                <div>
                     <AddItem />
                 </div>

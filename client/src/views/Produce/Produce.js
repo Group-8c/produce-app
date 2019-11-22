@@ -2,6 +2,7 @@ import React from 'react'
 import ProduceItem from './ProduceItem'
 import Search from '../../components/Searchbar'
 import data from '../data/data'
+import { connect } from 'react-redux';
 
 class Produce extends React.Component {
     // constructor(props) {
@@ -22,25 +23,34 @@ class Produce extends React.Component {
     }
 
     render() {
-        console.log(this.state.filterText)
+        //console.log(this.state.filterText)
+        const { isAdmin } = this.props.auth
         return (
             <div className="App">
                 <header className="home-head hero-image">
                     <div className="hero-text">
                         <h1>Produce</h1>
+                        <br />
                         <Search
                             filterText={this.state.filterText}
                             filterUpdate={this.filterUpdate.bind(this)}
                         />
                     </div>
                 </header>
+                <br />
                 <ProduceItem
                     data={data}
+                    isAdmin={isAdmin}
                     filterText={this.state.filterText}
                 />
+
             </div>
         )
     }
 }
 
-export default Produce;
+const mapStateToProps = (state) => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps)(Produce);

@@ -56,6 +56,7 @@ import {
                     user: null,
                     users: null,
                     isAuthenticated: false,
+                    isAdmin: false,
                     isLoading: false
                 }
 

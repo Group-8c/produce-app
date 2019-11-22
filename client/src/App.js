@@ -1,47 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home"
 import About from "./views/About/About"
-import Services from "./views/Services/Services"
-import Contact from "./views/Contact/Contact"
 import NotFound from "./views/NotFound"
 import Navbar from './components/Navbar'
+import My_Cart from "./views/My_Cart/My_Cart"
 import Register from './auth/Register';
 import Admin from './views/Admin/Admin'
 import SignIn from './auth/SignIn';
-import Footer from './Footer'
+import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
+import ProtectedRoute from './ProtectedRoute'
+import { connect } from 'react-redux';
 
+class App extends Component {
+  render() {
+    const { isAuthenticated, isAdmin } = this.props.auth; 
 
-import { Provider } from 'react-redux';
-import store from './store';
+    return (
+      <div>
+        <div>
+          <Navbar />
 
-const App = () => {
-  return (
-
-    <Provider store={store}>
-    <div>
-      <Navbar />
-
-      {//react-router links to static pages
-      }
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/About" component={About} />
-        <Route exact path="/Services" component={Services} />
-        <Route exact path="/Contact" component={Contact} />
-        <Route exact path="/Register" component={Register} />
-        <Route exact path="/Signin" component={SignIn} />
-        <Route exact path="/Produce" component={ProducePage} />
-        <Route exact path="/Admin" component={Admin} />
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
-    </Provider>
-  );
+          {//react-router links to static pages
+           // the route "/Admin" is protected by a prop that checks if the current user
+           // that is logged in is an admin
+          }
+          <Switch>
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/About" component={About} />
+            <Route exact path="/My_Cart" component={My_Cart} />
+            <Route exact path="/Register" component={Register} />
+            <Route exact path="/Signin" component={SignIn} />
+            <Route exact path="/Produce" component={ProducePage} />
+            <ProtectedRoute isAdmin={isAdmin} path="/Admin" component={Admin} />
+            <Route exact path="/">
+              <Redirect to="/Home" />
+            </Route>
+            <Route component={NotFound}/>
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps, null)(App)

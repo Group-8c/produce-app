@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Navbar, Nav, Button } from 'react-bootstrap'
+import { Navbar, Nav, Button, Dropdown, DropdownButton } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo1 from './images/logo1.png'
 import '../views/style/style.css'
@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Logout from '../auth/Logout';
 import Admin from '../views/Admin/Admin'
+import UserDropMenu from './UserDropMenu'
 
 class AppNavbar extends Component {
     
@@ -23,45 +24,52 @@ class AppNavbar extends Component {
          //Links an admin sees
          const adminLinks = (
             <Fragment>
-
+                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Nav.Link>
-                    
                     <Link to="/Admin" className="topnav-link" class="nav-link">Admin <span class="sr-only">(current)</span>
-                        
                     </Link>
                 </Nav.Link>
                 <Nav.Item>
                     <span className="navbar-text" style={{marginTop: "8px"}}>
-                        <strong>{ user ? `Welcome admin` : ''}</strong>
+                        <DropdownButton title={user ? 'Welcome admin' : ''}>
+                            <Dropdown.Item>Profile</Dropdown.Item>
+                            <Dropdown.Item>Settings</Dropdown.Item>
+                            <Dropdown.Item><Logout /></Dropdown.Item>
+                        </DropdownButton>
                     </span>
                 </Nav.Item>
-                <Nav.Link>
+                {/* <Nav.Link>
                     <Logout />
-                </Nav.Link>
+                </Nav.Link> */}
             </Fragment>
         )
-
-
 
         //Links a user sees
         const authLinks = (
             <Fragment>
+                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Nav.Item>
                     <span className="navbar-text" style={{marginTop: "8px"}}>
-                        <strong>{ user ? `Welcome ${user.email}` : ''}</strong>
+                        {/* <strong>{ user ? `Welcome ${user.email}` : ''}</strong> */}
+                        <DropdownButton title={user ? user.email : ''}>
+                            <Dropdown.Item>Profile</Dropdown.Item>
+                            <Dropdown.Item>Settings</Dropdown.Item>
+                            <Dropdown.Item><Logout /></Dropdown.Item>
+                        </DropdownButton>
                     </span>
                 </Nav.Item>
-                <Nav.Link>
+                {/* <Nav.Link>
                     <Logout />
-                </Nav.Link>
+                </Nav.Link> */}
             </Fragment>
         )
 
         //Links a guest sees
         const guestLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/Signin'>Sign in <span class="sr-only">(current)</span></Link>
-                <Link className="topnav-link" class="nav-link" to='/Register'>Register <span class="sr-only">(current)</span></Link>
+                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
+                <Link className="topnav-link nav-link" to='/Signin'>Sign in <span className="sr-only">(current)</span></Link>
+                <Link className="topnav-link nav-link" to='/Register'>Register <span className="sr-only">(current)</span></Link>
             </Fragment>
         )
 
@@ -80,11 +88,9 @@ class AppNavbar extends Component {
 
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">
-                        <Link className="topnav-link" class="nav-link" to='/Home'>Home <span class="sr-only">(current)</span></Link>
-                        <Link className="topnav-link" class="nav-link" to='/About'>About <span class="sr-only">(current)</span></Link>
-                        <Link className="topnav-link" class="nav-link" to='/Services'>Services <span class="sr-only">(current)</span></Link>
-                        <Link className="topnav-link" class="nav-link" to='/Contact'>Contact <span class="sr-only">(current)</span></Link>
-                        
+                        <Link className="topnav-link nav-link" to='/Home'>Featured <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/Produce'>Shop <span className="sr-only">(current)</span></Link>
+                        <Link className="topnav-link nav-link" to='/About'>About <span className="sr-only">(current)</span></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -98,4 +104,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, null)(AppNavbar)
-
