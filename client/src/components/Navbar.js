@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Logout from '../auth/Logout';
 import Admin from '../views/Admin/Admin'
-import UserDropMenu from './UserDropMenu'
+import CartItems from './CartItems'
+//import UserDropMenu from './UserDropMenu'
 
 class AppNavbar extends Component {
     
@@ -15,16 +16,13 @@ class AppNavbar extends Component {
         auth: PropTypes.object.isRequired
     }
 
-
     render() {
-
         const { isAuthenticated, isAdmin, user } = this.props.auth
-
+        const { toggleCart, cartVisible } = this.props
 
          //Links an admin sees
          const adminLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Nav.Link>
                     <Link to="/Admin" className="topnav-link" class="nav-link">Admin <span class="sr-only">(current)</span>
                     </Link>
@@ -67,7 +65,6 @@ class AppNavbar extends Component {
         //Links a guest sees
         const guestLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Signin'>Sign in <span className="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Register'>Register <span className="sr-only">(current)</span></Link>
             </Fragment>

@@ -39,7 +39,7 @@ class Home extends React.Component {
                 </Row>
                 <h3>To search all our items go to our   <Link to="/Produce"><Button
                     variant="outline-success"
-                    size="lg">Produce<span class="sr-only">(current)</span></Button></Link>    page.
+                    size="lg">Produce<span className="sr-only">(current)</span></Button></Link>    page.
                 </h3> 
             </div>
         )
