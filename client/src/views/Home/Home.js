@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Row, Card, CardDeck } from 'react-bootstrap'
+import { Container } from 'semantic-ui-react'
 import './Home.css';
 import Carousel from './Carousel'
 import { Link } from 'react-router-dom'
@@ -29,6 +30,7 @@ class Home extends React.Component {
                     </div>
                 </header>
                 <br />
+                <Container>
                 <h3>New Arrivals</h3>
                 <Carousel
                     data={data}
@@ -40,7 +42,8 @@ class Home extends React.Component {
                 <h3>To search all our items go to our   <Link to="/Produce"><Button
                     variant="outline-success"
                     size="lg">Produce<span className="sr-only">(current)</span></Button></Link>    page.
-                </h3> 
+                </h3>
+                </Container>
             </div>
         )
     };

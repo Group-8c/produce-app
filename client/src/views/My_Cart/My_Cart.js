@@ -1,14 +1,17 @@
 import React from 'react';
 import PaypalButton from '../../../src/components/PaypalButton';
-import { Jumbotron } from 'react-bootstrap';
+import { Container } from 'semantic-ui-react'
 
 function My_Cart() {
     return (
         <div id="My_Cart">
-            
-            <div className="page-header">
-                <h1>My Cart</h1>
-            </div>
+            <header className="home-head hero-image">
+                <div className="hero-text">
+                    <h1>Checkout</h1>
+                </div>
+            </header>
+            <br />
+            <Container>
             <div className="masthead-followup row m-0 border border-white">
                 <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                     <h5>My Cart</h5>
@@ -35,6 +38,7 @@ function My_Cart() {
                 </div>
             </div>
             <PaypalButton/>
+            </Container>
         </div>
     );
 }

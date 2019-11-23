@@ -80,5 +80,6 @@ CardDeck {
 
 .sidebar {
   padding-top: 75px;
-  padding-left: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

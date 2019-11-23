@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Sidebar } from 'semantic-ui-react'
+import { Menu, Sidebar, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const CartItems = ({cartVisible}) => {
@@ -23,7 +23,8 @@ const CartItems = ({cartVisible}) => {
       <button>Add/Remove</button>
       <Menu.Item as='a'>cart item</Menu.Item>
       <button>Add/Remove</button>
-      <Link className="topnav-link" class="nav-link" to='/My_Cart'>Checkout <span class="sr-only">(current)</span></Link>
+      <hr />
+      <Button className="circular fluid large ui yellow button"><Link to='/My_Cart'>Checkout <span class="sr-only">(current)</span></Link></Button>
     </Sidebar>
   )
 }

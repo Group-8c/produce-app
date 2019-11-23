@@ -3,6 +3,7 @@ import ProduceItem from './ProduceItem'
 import Search from '../../components/Searchbar'
 import data from '../data/data'
 import { connect } from 'react-redux';
+import { Container } from 'semantic-ui-react'
 
 class Produce extends React.Component {
     // constructor(props) {
@@ -38,11 +39,13 @@ class Produce extends React.Component {
                     </div>
                 </header>
                 <br />
-                <ProduceItem
-                    data={data}
-                    isAdmin={isAdmin}
-                    filterText={this.state.filterText}
-                />
+                <Container>
+                    <ProduceItem
+                        data={data}
+                        isAdmin={isAdmin}
+                        filterText={this.state.filterText}
+                    />
+                </Container>
 
             </div>
         )
