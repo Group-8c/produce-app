@@ -13,7 +13,17 @@ class Produce extends React.Component {
     // }
 
     state = {
+        produceItems: [],
         filterText: ''
+      }
+    
+    componentDidMount() {
+        //load static data into app state
+        this.setState({ produceItems: data })
+    }
+
+    adminDelete = (id) => {
+        this.setState({ produceItems: [...this.state.produceItems.filter(item => item.id !== id)] })
     }
     
     filterUpdate(value) {
@@ -38,8 +48,9 @@ class Produce extends React.Component {
                     </div>
                 </header>
                 <br />
-                <ProduceItem
-                    data={data}
+                 <ProduceItem
+                    produceItems={this.state.produceItems}
+                    adminDelete={this.adminDelete}
                     isAdmin={isAdmin}
                     filterText={this.state.filterText}
                 />

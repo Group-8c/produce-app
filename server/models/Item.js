@@ -7,13 +7,6 @@ const ItemSchema = new Schema({
         required:true,
         default:"fakeitemname"
     },
-    // itemID: {
-    //     type:String,
-    //     required:true,
-    //     unique:true,
-    //     default:"fakeitemid"
-    // },
-
     price: {
         type: String,
         required:true,
@@ -23,13 +16,6 @@ const ItemSchema = new Schema({
         type: Object,
         default: null
     }
-
-    // foodInfo: {
-    //     isHeartHealthy:Boolean,
-    //     isDiabeticFriendly:Boolean
-    // },
-
-    // foodGroups:[String]
 });
 
 module.exports = Item = mongoose.model('item', ItemSchema);

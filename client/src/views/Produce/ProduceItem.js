@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Card, CardDeck, Row, Col, Button, Popover, OverlayTrigger } from 'react-bootstrap'
 
-function ProduceItem ({data, filterText, isAdmin}) {
+function ProduceItem({produceItems, filterText, isAdmin, adminDelete}) {
+
     const [show, setShow] = React.useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const produceItems = data
-    .filter(item => {
+
+    const shopItems = produceItems
+     .filter(item => {
         return item.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0
-    })
+    }) 
     .map(item => {
         return (
             <CardDeck>
@@ -36,14 +38,15 @@ function ProduceItem ({data, filterText, isAdmin}) {
                             >
                                 <Button variant="btn btn-outline-info" size="sm" onClick={handleShow}>Details</Button>
                             </OverlayTrigger>
-                            <Button variant="success" size="sm">Add</Button>
+                            
                             {isAdmin ?
                             <Button
                                 className="remove-btn"
                                 variant="danger"
                                 size="sm"
+                                onClick={adminDelete.bind(this, item.id)}
                             >Remove</Button> 
-                            : null
+                            : <Button variant="success" size="sm">Add to cart</Button>
                             }
                             
                     </Card.Footer>
@@ -52,12 +55,13 @@ function ProduceItem ({data, filterText, isAdmin}) {
             </CardDeck>
         )
     })
-
+    
     return (
         <Row className="produce-items">
-            {produceItems}
+            {shopItems}
         </Row>
     );
-}
+    }
+
 
 export default ProduceItem

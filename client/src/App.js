@@ -11,11 +11,19 @@ import SignIn from './auth/SignIn';
 import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 import ProtectedRoute from './ProtectedRoute'
+import data from './views/data/data'
 import { connect } from 'react-redux';
 
 class App extends Component {
+
+  
+
+
   render() {
-    const { isAuthenticated, isAdmin } = this.props.auth; 
+    const { isAuthenticated, isAdmin } = this.props.auth;
+
+    
+    
 
     return (
       <div>
