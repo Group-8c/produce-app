@@ -16,9 +16,13 @@ const CartItems = ({cartVisible}) => {
         My Cart
       </Menu.Item>
       <Menu.Item as='a'>cart item</Menu.Item>
+      <button>Add/Remove</button>
       <Menu.Item as='a'>cart item</Menu.Item>
+      <button>Add/Remove</button>
       <Menu.Item as='a'>cart item</Menu.Item>
+      <button>Add/Remove</button>
       <Menu.Item as='a'>cart item</Menu.Item>
+      <button>Add/Remove</button>
       <Link className="topnav-link" class="nav-link" to='/My_Cart'>Checkout <span class="sr-only">(current)</span></Link>
     </Sidebar>
   )

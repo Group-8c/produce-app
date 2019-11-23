@@ -11,6 +11,17 @@ function My_Cart() {
             </div>
             <div className="masthead-followup row m-0 border border-white">
                 <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
+                    <h5>My Cart</h5>
+                    <p>Amount....Cost/unit.............Amount x Cost/unit </p>
+                    <button>Add/Remove</button>
+                    <h5>Item 2</h5>
+                    <p>Amount....Cost/unit.............Amount x Cost/unit </p>
+                    <button>Add/Remove</button>
+                    <h5>Item 3</h5>
+                    <p>Amount....Cost/unit.............Amount x Cost/unit </p>
+                    <button>Add/Remove</button>
+                </div>
+                <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                     <h5>Item 1</h5>
                     <p>Amount....Cost/unit.............Amount x Cost/unit </p>
                     <h5>Item 2</h5>

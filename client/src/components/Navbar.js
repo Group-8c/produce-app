@@ -45,7 +45,10 @@ class AppNavbar extends Component {
         //Links a user sees
         const authLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
+                <Button variant="link"
+                    className="topnav-link nav-link"
+                    onClick={() => toggleCart(cartVisible)}
+                >My Cart <span className="sr-only">(current)</span></Button>
                 <Nav.Item>
                     <span className="navbar-text" style={{marginTop: "8px"}}>
                         {/* <strong>{ user ? `Welcome ${user.email}` : ''}</strong> */}
