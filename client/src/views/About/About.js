@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap'
+import { Container} from 'semantic-ui-react'
 import farm from '../../components/images/farm.jpg'
 import market from '../../components/images/market.jpg'
 import produce from '../../components/images/agriculture-beetroot-beets-533360.jpg'
@@ -13,6 +13,7 @@ function About() {
                 </div>
             </header>
             <br />
+            <Container>
             <div className="masthead-followup row m-0 border border-white">
                 <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                     <img src={ farm } width="100%" />
@@ -48,8 +49,8 @@ function About() {
                         Bi-weekly service.
                         Seasonal subscriptions available.</p>
                 </div>
-
             </div>
+            </Container>
         </div>    
     );
 }

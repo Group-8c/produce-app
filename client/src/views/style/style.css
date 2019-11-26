@@ -88,3 +88,9 @@ CardDeck {
 .modal-backdrop {
   background: rgba(0, 0, 0, .1)
 }
+
+.sidebar {
+  padding-top: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

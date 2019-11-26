@@ -6,8 +6,9 @@ import '../views/style/style.css'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Logout from '../auth/Logout';
-import Admin from '../views/Admin/Admin';
-import cart_image from './images/cart_image.png';
+import Admin from '../views/Admin/Admin'
+import CartItems from './CartItems'
+//import UserDropMenu from './UserDropMenu'
 
 class AppNavbar extends Component {
     
@@ -15,16 +16,13 @@ class AppNavbar extends Component {
         auth: PropTypes.object.isRequired
     }
 
-
     render() {
-
         const { isAuthenticated, isAdmin, user } = this.props.auth
-
+        const { toggleCart, cartVisible } = this.props
 
          //Links an admin sees
          const adminLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'><img src={cart_image} alt="cart"></img> <span class="sr-only">(current)</span></Link>
                 <Nav.Link>
                     <Link to="/Admin" className="topnav-link" class="nav-link">Admin <span class="sr-only">(current)</span>
                     </Link>
@@ -47,7 +45,10 @@ class AppNavbar extends Component {
         //Links a user sees
         const authLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'> <img src={cart_image} alt="cart"></img><span class="sr-only">(current)</span></Link>
+                <Button variant="link"
+                    className="topnav-link nav-link"
+                    onClick={() => toggleCart(cartVisible)}
+                >My Cart <span className="sr-only">(current)</span></Button>
                 <Nav.Item>
                     <span className="navbar-text" style={{marginTop: "8px"}}>
                         {/* <strong>{ user ? `Welcome ${user.email}` : ''}</strong> */}
@@ -67,7 +68,6 @@ class AppNavbar extends Component {
         //Links a guest sees
         const guestLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'><img src={cart_image} alt="cart"></img> <span class="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Signin'>Sign in <span className="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Register'>Register <span className="sr-only">(current)</span></Link>
             </Fragment>
