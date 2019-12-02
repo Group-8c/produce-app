@@ -30,6 +30,7 @@ class App extends Component {
     this.setState({ userCart: [...this.state.userCart, {
       name: item.name,
       price: item.price,
+      img: item.img,
       id: uuid()
     }]})
     this.setState({ total: Math.round((this.state.total + item.price) * 100) / 100 })
@@ -73,10 +74,10 @@ class App extends Component {
               <Switch>
                 <Route exact path="/Home" component={Home} />
                 <Route exact path="/About" component={About} />
-                <Route exact path="/My_Cart" component={My_Cart} />
+                <Route exact path="/My_Cart" render={(routeProps) => (<My_Cart {...routeProps} userCart={this.state.userCart} total={this.state.total}/>)} />
                 <Route exact path="/Register" component={Register} />
                 <Route exact path="/Signin" component={SignIn} />
-                <Route exact path="/Produce" render={(routeProps) => (<ProducePage {...routeProps} addToCart={this.addToCart}/>)} />
+                <Route exact path="/Produce" render={(routeProps) => (<ProducePage {...routeProps} addToCart={this.addToCart} total={this.state.total}/>)} />
                 <ProtectedRoute isAdmin={isAdmin} path="/Admin" component={Admin} />
                 <Route exact path="/">
                   <Redirect to="/Home" />
