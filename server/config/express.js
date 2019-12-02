@@ -36,6 +36,7 @@ module.exports.init = () => {
     // add a router
     app.use('/api/users', require('../routes/api/users'));
     app.use('/api/auth', require('../routes/api/auth'));
+    app.use('/api/items', require('../routes/api/items'));
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

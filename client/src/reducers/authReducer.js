@@ -12,8 +12,10 @@ import {
   const initialState = {
       token: localStorage.getItem('token'),
       isAuthenticated: null,
+      isAdmin: false,
       isLoading: false,
       user: null
+      
   }
 
   export default function(state = initialState, action) {
@@ -31,13 +33,14 @@ import {
                     isLoading: false,
                     user: action.payload
                 };
-
             case LOGIN_SUCCESS:
             case REGISTER_SUCCESS:
                 localStorage.setItem('token', action.payload.token);
+                
                 return {
                     ...state,
                     ...action.payload,
+                    isAdmin: action.payload.user.isAdmin,
                     isAuthenticated: true,
                     isLoading: false
                 };
@@ -51,7 +54,9 @@ import {
                     ...state,
                     token: null,
                     user: null,
+                    users: null,
                     isAuthenticated: false,
+                    isAdmin: false,
                     isLoading: false
                 }
 

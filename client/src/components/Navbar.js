@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from 'react'
-import { Navbar, Nav, } from 'react-bootstrap'
+import { Navbar, Nav, Button, Dropdown, DropdownButton } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo1 from './images/logo1.png'
 import '../views/style/style.css'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Register from '../auth/Register';
-import SignIn from '../auth/SignIn';
 import Logout from '../auth/Logout';
+import Admin from '../views/Admin/Admin'
+import CartItems from './CartItems'
+//import UserDropMenu from './UserDropMenu'
 
 class AppNavbar extends Component {
     
@@ -15,23 +16,58 @@ class AppNavbar extends Component {
         auth: PropTypes.object.isRequired
     }
 
-
     render() {
+        const { isAuthenticated, isAdmin, user } = this.props.auth
+        const { toggleCart, cartVisible } = this.props
 
-        const { isAuthenticated, user } = this.props.auth
-
-        const authLinks = (
+         //Links an admin sees
+         const adminLinks = (
             <Fragment>
                 <Nav.Link>
-                    <Logout />
+                    <Link to="/Admin" className="topnav-link" class="nav-link">Admin <span class="sr-only">(current)</span>
+                    </Link>
                 </Nav.Link>
+                <Nav.Item>
+                    <span className="navbar-text" style={{marginTop: "8px"}}>
+                        <DropdownButton title={user ? 'Welcome admin' : ''}>
+                            <Dropdown.Item>Profile</Dropdown.Item>
+                            <Dropdown.Item>Settings</Dropdown.Item>
+                            <Dropdown.Item><Logout /></Dropdown.Item>
+                        </DropdownButton>
+                    </span>
+                </Nav.Item>
+                {/* <Nav.Link>
+                    <Logout />
+                </Nav.Link> */}
             </Fragment>
-
         )
 
+        //Links a user sees
+        const authLinks = (
+            <Fragment>
+                <Button variant="link"
+                    className="topnav-link nav-link"
+                    onClick={() => toggleCart(cartVisible)}
+                >My Cart <span className="sr-only">(current)</span></Button>
+                <Nav.Item>
+                    <span className="navbar-text" style={{marginTop: "8px"}}>
+                        {/* <strong>{ user ? `Welcome ${user.email}` : ''}</strong> */}
+                        <DropdownButton title={user ? user.email : ''}>
+                            <Dropdown.Item>Profile</Dropdown.Item>
+                            <Dropdown.Item>Settings</Dropdown.Item>
+                            <Dropdown.Item><Logout /></Dropdown.Item>
+                        </DropdownButton>
+                    </span>
+                </Nav.Item>
+                {/* <Nav.Link>
+                    <Logout />
+                </Nav.Link> */}
+            </Fragment>
+        )
+
+        //Links a guest sees
         const guestLinks = (
             <Fragment>
-                <Link className="topnav-link" class="nav-link" to='/My_Cart'>My Cart <span class="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Signin'>Sign in <span className="sr-only">(current)</span></Link>
                 <Link className="topnav-link nav-link" to='/Register'>Register <span className="sr-only">(current)</span></Link>
             </Fragment>
@@ -44,10 +80,11 @@ class AppNavbar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="navbar-nav ml-auto order-2">
-                        {//if the user is logged in, show authLinks, else show guestLinks
+
+                        {//if the user is logged in, show admin links if the user
+                        //is an admin, else show authLinks, else show guestLinks
                         }
-                        
-                        { isAuthenticated ? authLinks : guestLinks}
+                        { isAuthenticated ? isAdmin ? adminLinks : authLinks : guestLinks}
 
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">
