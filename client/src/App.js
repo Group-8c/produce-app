@@ -12,6 +12,7 @@ import SignIn from './auth/SignIn';
 import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 import ProtectedRoute from './ProtectedRoute'
+import uuid from 'uuid'
 import data from './views/data/data'
 import { connect } from 'react-redux';
 import CartItems from './components/CartItems'
@@ -19,15 +20,35 @@ import CartItems from './components/CartItems'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { cartVisible: false }
+    this.state = { 
+      cartVisible: false,
+      userCart: [],
+      total: 0
+     }
   }
+  addToCart = (item) => {
+    this.setState({ userCart: [...this.state.userCart, {
+      name: item.name,
+      price: item.price,
+      id: uuid()
+    }]})
+    this.setState({ total: Math.round((this.state.total + item.price) * 100) / 100 })
+  }
+  removeFromCart = (delItem) => {
+    this.setState({ 
+      userCart: [...this.state.userCart.filter(item => item.id !== delItem.id)],
+      total: Math.round((this.state.total - delItem.price) * 100) / 100
+    });
+  }
+  
 
   toggleCart() {
     this.setState({cartVisible: !this.state.cartVisible})
   }
   render() {
 
-    const { isAuthenticated, isAdmin } = this.props.auth; 
+    const { isAuthenticated, isAdmin } = this.props.auth;
+    console.log(this.state.userCart)
 
     return (
       <div>
@@ -44,6 +65,9 @@ class App extends Component {
           <Sidebar.Pusher>
             <CartItems
               cartVisible={this.state.cartVisible}
+              userCart={this.state.userCart}
+              removeFromCart={this.removeFromCart}
+              total={this.state.total}
             />
             <Ref>
               <Switch>
@@ -52,7 +76,7 @@ class App extends Component {
                 <Route exact path="/My_Cart" component={My_Cart} />
                 <Route exact path="/Register" component={Register} />
                 <Route exact path="/Signin" component={SignIn} />
-                <Route exact path="/Produce" component={ProducePage} />
+                <Route exact path="/Produce" render={(routeProps) => (<ProducePage {...routeProps} addToCart={this.addToCart}/>)} />
                 <ProtectedRoute isAdmin={isAdmin} path="/Admin" component={Admin} />
                 <Route exact path="/">
                   <Redirect to="/Home" />

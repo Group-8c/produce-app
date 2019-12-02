@@ -11,6 +11,7 @@ export default [
         index: 0,
         id: 1, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -18,13 +19,15 @@ export default [
         index: 1, 
         id: 2, 
         name: 'Apples',
-        description: 'Fresh apples. 7.99', 
+        description: 'Fresh apples. 7.99',
+        price: 7.99,
         img: apple
     },
     {
         index: 2, 
         id: 3, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     },
@@ -32,6 +35,7 @@ export default [
         index: 3,
         id: 4, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -39,6 +43,7 @@ export default [
         index: 4, 
         id: 5, 
         name: 'Apples',
+        price: 7.99,
         description: 'Fresh apples. 7.99', 
         img: apple
     },
@@ -46,6 +51,7 @@ export default [
         index: 5, 
         id: 6, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     },
@@ -53,6 +59,7 @@ export default [
         index: 6,
         id: 1, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -60,6 +67,7 @@ export default [
         index: 7, 
         id: 2, 
         name: 'Apples',
+        price: 7.99,
         description: 'Fresh apples. 7.99', 
         img: apple
     },
@@ -67,6 +75,7 @@ export default [
         index: 8, 
         id: 3, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     },
@@ -74,6 +83,7 @@ export default [
         index: 9,
         id: 4, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -81,6 +91,7 @@ export default [
         index: 10, 
         id: 5, 
         name: 'Apples',
+        price: 7.99,
         description: 'Fresh apples. 7.99', 
         img: apple
     },
@@ -88,6 +99,7 @@ export default [
         index: 11, 
         id: 6, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     },
@@ -95,6 +107,7 @@ export default [
         index: 12,
         id: 1, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -102,6 +115,7 @@ export default [
         index: 13, 
         id: 2, 
         name: 'Apples',
+        price: 7.99,
         description: 'Fresh apples. 7.99', 
         img: apple
     },
@@ -109,6 +123,7 @@ export default [
         index: 14, 
         id: 3, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     },
@@ -116,6 +131,7 @@ export default [
         index: 15,
         id: 4, 
         name: 'Oranges',
+        price: 5.99,
         description: 'The best oranges. 5.99', 
         img: orange
     },
@@ -123,6 +139,7 @@ export default [
         index: 16, 
         id: 5, 
         name: 'Apples',
+        price: 7.99,
         description: 'Fresh apples. 7.99', 
         img: apple
     },
@@ -130,6 +147,7 @@ export default [
         index: 17, 
         id: 6, 
         name: 'Bananas',
+        price: 8.99,
         description: 'Tasty bananas. 8.99/lb', 
         img: bananas
     }

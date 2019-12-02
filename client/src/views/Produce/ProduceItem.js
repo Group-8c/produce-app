@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardDeck, Row, Col, Button, Popover, OverlayTrigger } from 'react-bootstrap'
 
-function ProduceItem({produceItems, filterText, isAdmin, adminDelete}) {
+function ProduceItem({produceItems, filterText, isAdmin, adminDelete, addToCart}) {
 
     const [show, setShow] = React.useState(false);
     const handleClose = () => setShow(false);
@@ -46,7 +46,11 @@ function ProduceItem({produceItems, filterText, isAdmin, adminDelete}) {
                                 size="sm"
                                 onClick={adminDelete.bind(this, item.id)}
                             >Remove</Button> 
-                            : <Button variant="success" size="sm">Add to cart</Button>
+                            : <Button 
+                                variant="success" 
+                                size="sm"
+                                onClick={addToCart.bind(this, item)}
+                                >Add to cart</Button>
                             }
                             
                     </Card.Footer>

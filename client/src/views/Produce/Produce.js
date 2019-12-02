@@ -54,6 +54,7 @@ class Produce extends React.Component {
                         produceItems={this.state.produceItems}
                         adminDelete={this.adminDelete}
                         isAdmin={isAdmin}
+                        addToCart={this.props.addToCart}
                         filterText={this.state.filterText}
                     />
                 </Container>
