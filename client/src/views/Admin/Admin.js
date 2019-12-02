@@ -18,9 +18,6 @@ export class Admin extends Component {
                <div>
                     <AddItem />
                 </div>
-                <div style={{margin:"-330px 50px", maxWidth: "100px"}}>
-                    <GetUsers />
-                </div>
             </div>
         )
     }
