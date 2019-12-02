@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
+
+import { connect } from 'react-redux';
 import ppic from '../../components/images/default-profile-pic.jpg'
 
 class Profile extends Component {
+    
     render() {
+        const {isAuthenticated, user} = this.props.auth;
         
         return (
             <div>
@@ -20,23 +24,28 @@ class Profile extends Component {
                 <div className="ui-grid">
                     <form className="ui-form">
                         <div className="field">
-                            <label>First Name</label>
-                            <input type="text" placeholder="First Name"/>
+                            <label className="label">First Name</label>
+                            <br/>
+                            <input className="input-container" type="text" defaultValue={isAuthenticated ? user.firstName : ""}/>
                         </div>
                         <div className="field">
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Last Name"/>
+                            <label className="label">Last Name</label>
+                            <br/>
+                            <input className="input-container" type="text" defaultValue={isAuthenticated ? user.lastName : ""}/>
                         </div>
                         <div className="field">
-                            <label>Email</label>
-                            <input type="text" placeholder="Email"/>
+                            <label className="label">Email</label>
+                            <br/>
+                            <input className="input-container" type="text" defaultValue={isAuthenticated ? user.email : ""}/>
                         </div>
                         <div className="field">
-                            <label>Bio</label>
-                            <textarea rows="4" cols="40" placeholder="Bio"/>
+                            <label className="label">Bio</label>
+                            <br/>
+                            <textarea className="Bio" placeholder="Bio"/>
                         </div>                    
                         
-
+                        <button className="update-button" type="submit">Update</button>
+                        <br/>
                     </form>    
                 </div>            
 
@@ -46,4 +55,8 @@ class Profile extends Component {
     }
 };
 
-export default Profile;
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(mapStateToProps, null)(Profile);

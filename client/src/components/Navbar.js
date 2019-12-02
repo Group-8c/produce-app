@@ -32,8 +32,8 @@ class AppNavbar extends Component {
                 <Nav.Item>
                     <span className="navbar-text" style={{marginTop: "8px"}}>
                         <DropdownButton title={user ? 'Welcome admin' : ''}>
-                            <Dropdown.Item href='/Profile'>Profile</Dropdown.Item>
-                            <Dropdown.Item href='/Settings'>Settings</Dropdown.Item>
+                            <Dropdown.Item><Link to='/Profile'>Profile</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/Settings'>Settings</Link></Dropdown.Item>
                             <Dropdown.Item><Logout /></Dropdown.Item>
                         </DropdownButton>
                     </span>
@@ -52,8 +52,8 @@ class AppNavbar extends Component {
                     <span className="navbar-text" style={{marginTop: "8px"}}>
                         {/* <strong>{ user ? `Welcome ${user.email}` : ''}</strong> */}
                         <DropdownButton title={user ? user.email : 'default@gmail.com'}>
-                            <Dropdown.Item href='/Profile'>Profile</Dropdown.Item>
-                            <Dropdown.Item href='/Settings'>Settings</Dropdown.Item>
+                            <Dropdown.Item><Link to='/Profile'>Profile</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/Settings'>Settings</Link></Dropdown.Item>
                             <Dropdown.Item><Logout /></Dropdown.Item>
                         </DropdownButton>
                     </span>
@@ -84,8 +84,8 @@ class AppNavbar extends Component {
                         {//if the user is logged in, show admin links if the user
                         //is an admin, else show authLinks, else show guestLinks
                         }
-                        {authLinks}
-                        {/* { isAuthenticated ? isAdmin ? adminLinks : authLinks : guestLinks} */}
+                        {/* {authLinks} */}
+                        { isAuthenticated ? isAdmin ? adminLinks : authLinks : guestLinks}
 
                     </Nav>
                     <Nav className="navbar-nav mr-auto order-1">

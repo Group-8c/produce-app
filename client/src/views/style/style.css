@@ -20,6 +20,9 @@
 .navbar-dark .navbar-text a {
   color:black;
   text-decoration:none;
+  text-align:left;
+  font:12pt;
+  padding:2px;
 }
 
 .navbar-dark .navbar-text a:hover {
@@ -42,18 +45,30 @@
   text-align:center;
 }
 
-.ui-form {
-  
-}
-
-.name {
-  background:blue;
-}
-
 .field {
-
+  text-align: center;
 }
 
+.label {
+  position:relative;
+  top:5px;
+}
+
+.Bio {
+  width:500px;
+  height:200px;
+}
+
+.input-container {
+  width:500px;
+}
+
+.update-button {
+  position:relative;
+  top:10px;
+  background: orange;
+  font-size: 1.25rem;
+}
 
 .nav-item {
   position:relative;
