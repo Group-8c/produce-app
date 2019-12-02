@@ -11,6 +11,8 @@ import SignIn from './auth/SignIn';
 import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 import ProtectedRoute from './ProtectedRoute'
+import Profile from './views/Profile/Profile'
+import data from './views/data/data'
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -29,6 +31,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/Home" component={Home} />
             <Route exact path="/About" component={About} />
+            <Route exact path="/Profile" component={Profile} />
             <Route exact path="/My_Cart" component={My_Cart} />
             <Route exact path="/Register" component={Register} />
             <Route exact path="/Signin" component={SignIn} />
