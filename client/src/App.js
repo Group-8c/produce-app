@@ -43,7 +43,6 @@ class App extends Component {
     });
   }
   
-
   toggleCart() {
     this.setState({cartVisible: !this.state.cartVisible})
   }
