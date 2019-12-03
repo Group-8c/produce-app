@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Card, CardDeck, Row, Col, Button, Popover, OverlayTrigger } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-function ProduceItem({produceItems, filterText, isAdmin, adminDelete, addToCart}) {
+function ProduceItem({produceItems, filterText, isAdmin, isAuthenticated, adminDelete, addToCart}) {
 
     const [show, setShow] = React.useState(false);
     const handleClose = () => setShow(false);
@@ -39,7 +40,7 @@ function ProduceItem({produceItems, filterText, isAdmin, adminDelete, addToCart}
                                 <Button variant="btn btn-outline-info" size="sm" onClick={handleShow}>Details</Button>
                             </OverlayTrigger>
                             
-                            {isAdmin ?
+                            {isAuthenticated ? isAdmin ?
                             <Button
                                 className="remove-btn"
                                 variant="danger"
@@ -51,6 +52,10 @@ function ProduceItem({produceItems, filterText, isAdmin, adminDelete, addToCart}
                                 size="sm"
                                 onClick={addToCart.bind(this, item)}
                                 >Add to cart</Button>
+                            : <Link to="/Signin"><Button 
+                                variant="success" 
+                                size="sm"
+                                >Add to Cart</Button></Link>
                             }
                             
                     </Card.Footer>

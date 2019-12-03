@@ -35,7 +35,7 @@ class Produce extends React.Component {
 
     render() {
         //console.log(this.state.filterText)
-        const { isAdmin } = this.props.auth
+        const { isAuthenticated, isAdmin } = this.props.auth
         return (
             <div className="App">
                 <header className="home-head hero-image">
@@ -54,6 +54,7 @@ class Produce extends React.Component {
                         produceItems={this.state.produceItems}
                         adminDelete={this.adminDelete}
                         isAdmin={isAdmin}
+                        isAuthenticated={isAuthenticated}
                         addToCart={this.props.addToCart}
                         filterText={this.state.filterText}
                     />
