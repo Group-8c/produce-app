@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import ProducePage from './views/Produce/Produce'
 import ProtectedRoute from './ProtectedRoute'
 import uuid from 'uuid'
+import Profile from './views/Profile/Profile'
 import data from './views/data/data'
 import { connect } from 'react-redux';
 import CartItems from './components/CartItems'
@@ -74,6 +75,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/Home" component={Home} />
                 <Route exact path="/About" component={About} />
+                <Route exact path="/Profile" component={Profile} />
                 <Route exact path="/My_Cart" render={(routeProps) => (<My_Cart {...routeProps} userCart={this.state.userCart} total={this.state.total}/>)} />
                 <Route exact path="/Register" component={Register} />
                 <Route exact path="/Signin" component={SignIn} />
