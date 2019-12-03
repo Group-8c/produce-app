@@ -36,13 +36,14 @@ class Home extends React.Component {
                     data={data}
                 />
                 <h3>Featured Apples</h3>
-                <Row className="produce-items">
+                <Row>
                     {apples}
                 </Row>
                 <h3>To search all our items go to our   <Link to="/Produce"><Button
                     variant="outline-success"
                     size="lg">Produce<span className="sr-only">(current)</span></Button></Link>    page.
                 </h3>
+                <br />
                 </Container>
             </div>
         )

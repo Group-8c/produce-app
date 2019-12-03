@@ -61,7 +61,7 @@ function ProduceItem({produceItems, filterText, isAdmin, adminDelete, addToCart}
     })
     
     return (
-        <Row className="produce-items">
+        <Row>
             {shopItems}
         </Row>
     );
