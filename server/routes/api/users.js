@@ -15,7 +15,7 @@ const Client = require('../../models/Client');
 // @access Public 
 router.post('/', (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    const jwtSecret = require('../../config/config.js').jwtSecret;
+    const jwtSecret = process.env.JWT_SECRET || require('../../config/config.js').jwtSecret;
 
     //Check for required information
     if(!firstName || !lastName || !email || !password) {

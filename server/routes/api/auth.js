@@ -14,7 +14,7 @@ const Client = require('../../models/Client');
 // @access Public 
 router.post('/', (req, res) => {
     const { email, password } = req.body;
-    const jwtSecret = require('../../config/config.js').jwtSecret;
+    const jwtSecret = process.env.JWT_SECRET || require('../../config/config.js').jwtSecret;
 
     //simple validation
     if(!email || !password) {

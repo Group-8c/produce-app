@@ -12,11 +12,10 @@ module.exports.init = () => {
     */
 
     //get database uri
-    //const db = config.get('mongoURI');
-    const db = require('./config.js').db.uri
+    //const db = config.get('mongoURI')
 
 
-    mongoose.connect(process.env.DB_URI || db, {
+    mongoose.connect(process.env.DB_URI || require('./config.js').db.uri, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true
