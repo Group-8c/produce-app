@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import PaypalButton from '../../../src/components/PaypalButton';
+import StripeBtn from '../../../src/components/StripeBtn';
 import { Container } from 'semantic-ui-react'
 
 function My_Cart({ userCart, total }) {
@@ -53,7 +53,8 @@ function My_Cart({ userCart, total }) {
                     <p>Total:    {Math.round((total + tax) * 100) / 100}   </p>
                 </div>
             </div>
-            <PaypalButton/>
+            
+          <StripeBtn />
             </Container>
         </div>
     );
