@@ -27,6 +27,8 @@ class App extends Component {
       total: 0
      }
   }
+  
+  // Admin function for adding item to cart (not to database)
   addToCart = (item) => {
     this.setState({ userCart: [...this.state.userCart, {
       name: item.name,
@@ -36,6 +38,8 @@ class App extends Component {
     }]})
     this.setState({ total: Math.round((this.state.total + item.price) * 100) / 100 })
   }
+  
+  // Admin function for removing item from cart (not from database)
   removeFromCart = (delItem) => {
     this.setState({ 
       userCart: [...this.state.userCart.filter(item => item.id !== delItem.id)],
