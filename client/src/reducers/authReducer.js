@@ -1,5 +1,6 @@
 /*
     React-Redux reducer file for user authentication actions (logging in, registering, etc.)
+    This file contains some code borrowed from Traversy Media and adapted to this project. (Link in readme)
 */
 
 import {
