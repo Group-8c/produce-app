@@ -1,3 +1,8 @@
+/*
+    This file contains some code that was borrowed from Traversy Media MERN Tutorial and adapted to this project. There is a link to tutorial
+    in the readme.
+*/
+
 import axios from 'axios';
 import { returnErrors } from './errorActions';
 
@@ -12,6 +17,7 @@ import {
     REGISTER_FAIL
   } from './types';
 
+  // Get user information from logged in user
   export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: USER_LOADING });
 
@@ -31,6 +37,7 @@ import {
         });
   };
 
+  // Register user action
   export const register = ({ firstName, lastName, email, password }) => dispatch => {
 
     //Set headers
@@ -56,7 +63,7 @@ import {
         })
   };
 
-  //Login user
+  //Login user action
   export const login = ({ email, password }) => dispatch => {
 
     //headers
@@ -88,7 +95,8 @@ import {
           type: LOGOUT_SUCCESS
       }
   }
-
+  
+  // Function for setting up token for JWT authentication
   export const tokenConfig = getState => {
     //Get token from localStorage
     const token = getState().auth.token;
