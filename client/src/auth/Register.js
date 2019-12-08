@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { register } from '../actions/authActions';
 import { clearErrors } from '../actions/errorActions';
 
+// Component for registering a new account
 export class Register extends Component {
 
     state = {
@@ -24,7 +25,8 @@ export class Register extends Component {
         clearErrors: PropTypes.func.isRequired,
         history: PropTypes.object.isRequired
     }
-
+    
+    //If the register is a success redirect the user home or show errors if not a success
     componentDidUpdate(previousProps) {
         const { error, isAuthenticated } = this.props;
         if( error !== previousProps.error) {
@@ -43,6 +45,7 @@ export class Register extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    // Upon form submission, register a new user
     onSubmit = e => {
         e.preventDefault();
 
@@ -58,6 +61,7 @@ export class Register extends Component {
         this.props.register(newUser);
     }
 
+    // Render the register button and show proper error message, if any.
     render() {
         return (
             <div className="App">
