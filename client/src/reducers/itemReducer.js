@@ -1,3 +1,7 @@
+/*
+    React-Redux reducer file for admin item actions for managing shop items
+*/
+
 import {
     ADD_ITEM, DELETE_ITEM
   } from '../actions/types';
