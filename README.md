@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
+## Link to the deployed app: https://produce-app-8c.herokuapp.com/
+
+## Organizations were code is borrowed from:
+- https://getbootstrap.com/docs/4.4/getting-started/introduction/
+- https://react-bootstrap.github.io/getting-started/introduction/
+
+## Features Implemented
+- Search function on produce page
+- user authentication / registration
+- admin account
+- checkout / cart
+- 3rd party payment
 
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. For:
@@ -7,7 +18,6 @@ This project does not have a mongoDB connection setup. For:
 - production: Since the config file is not pushed when you deploy your app, you must specifiy your db uri in heorku. Set the uri in heroku as specified in [this](https://devcenter.heroku.com/articles/config-vars) resource. Make sure you name the environement variable "DB_URI".
 
 ## Getting Started
-This repository aims to assist you in beginning work on a MERN stack application with a solid file structure as a foundation. To get started make a copy of this template repo for your project teams.
 
 Since this project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` and `npm install react-stripe-checkout axios` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json .
 
