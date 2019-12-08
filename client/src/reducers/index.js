@@ -1,3 +1,6 @@
+/*
+    React-Redux reducer file for combining different reducers
+*/
 import { combineReducers } from 'redux';
 import errorReducer from './errorReducer';
 import authReducer from './authReducer';
