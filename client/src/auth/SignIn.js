@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { login } from '../actions/authActions';
 import { clearErrors } from '../actions/errorActions';
 
+// Component for signing in to a registered account. 
 export class SignIn extends Component {
 
     state = {
@@ -22,6 +23,7 @@ export class SignIn extends Component {
         history: PropTypes.object.isRequired
     }
 
+    // Redirect user home upon successful logout or show errors if unsuccessful.
     componentDidUpdate(previousProps) {
         const { error, isAuthenticated } = this.props;
         if(error != previousProps.error) {
@@ -42,6 +44,7 @@ export class SignIn extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    // Upon form submission try to sign user in
     onSubmit = e => {
         e.preventDefault();
 
@@ -56,6 +59,7 @@ export class SignIn extends Component {
         
     }
 
+    // Render the sign in component and show error message, if any.
     render() {
         return (
             <div className="App">
