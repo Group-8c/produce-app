@@ -1,16 +1,4 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## Link to the deployed app: https://produce-app-8c.herokuapp.com/
-
-## Organizations were code is borrowed from:
-- https://getbootstrap.com/docs/4.4/getting-started/introduction/
-- https://react-bootstrap.github.io/getting-started/introduction/
-
-## Features Implemented
-- Search function on produce page
-- user authentication / registration
-- admin account
-- checkout / cart
-- 3rd party payment
 
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. For:
@@ -87,3 +75,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Link to the deployed app: https://produce-app-8c.herokuapp.com/
+
+## Organizations were code is borrowed from:
+- https://getbootstrap.com/docs/4.4/getting-started/introduction/
+- https://react-bootstrap.github.io/getting-started/introduction/
+
+## Features Implemented
+- Search function on produce page
+- user authentication / registration
+- admin account
+- checkout / cart
+- 3rd party payment
