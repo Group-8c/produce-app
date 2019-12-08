@@ -1,3 +1,7 @@
+/*
+    React-Redux reducer file for user authentication actions (logging in, registering, etc.)
+*/
+
 import { GET_ERRORS, CLEAR_ERRORS} from '../actions/types';
 
 const initialState = {
