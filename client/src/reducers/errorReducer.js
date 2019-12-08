@@ -1,5 +1,5 @@
 /*
-    React-Redux reducer file for user authentication actions (logging in, registering, etc.)
+    React-Redux reducer file for error message actions for user authentication errors.
 */
 
 import { GET_ERRORS, CLEAR_ERRORS} from '../actions/types';
