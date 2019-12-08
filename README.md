@@ -81,7 +81,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## Organizations were code is borrowed from:
 - https://getbootstrap.com/docs/4.4/getting-started/introduction/
 - https://react-bootstrap.github.io/getting-started/introduction/
-
+- Traversy Media: https://www.youtube.com/watch?v=PBTYxXADG_k&list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE (Videos 9-12 for user   authentication
+- FreeCodeCamp.org: https://www.youtube.com/watch?v=Y0-qdp-XBJg (protected routes for admin)
 ## Features Implemented
 - Search function on produce page
 - user authentication / registration
