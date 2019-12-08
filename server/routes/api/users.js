@@ -1,5 +1,7 @@
+  
 /*
-    This file will hold the rest api route information for clients.
+    This file contains some code that was borrowed from Traversy Media MERN Tutorial and adapted to this project. There is a link to tutorial
+    in the readme.
 */
 
 const express = require('express');
