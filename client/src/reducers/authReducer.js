@@ -1,3 +1,7 @@
+/*
+    React-Redux reducer file for user authentication actions (logging in, registering, etc.)
+*/
+
 import {
     USER_LOADED,
     USER_LOADING,
