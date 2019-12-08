@@ -3,6 +3,8 @@ import { ADD_ITEM, DELETE_ITEM } from './types';
 import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
+
+// Admin function for adding shop items to the database
 export const addItem = ({ name, price, image }) => (dispatch, getState) => {
     const config = {
         headers: {
@@ -19,6 +21,7 @@ export const addItem = ({ name, price, image }) => (dispatch, getState) => {
         
 }
 
+// Admin function for deleting shop items from the database
 export const deleteItem = (id) => (dispatch) => {
     axios.delete(`/api/items/${id}`).then(res =>
         dispatch({
