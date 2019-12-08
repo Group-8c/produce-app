@@ -1,3 +1,9 @@
+  
+/*
+    This file contains some code that was borrowed from Traversy Media MERN Tutorial and adapted to this project. There is a link to tutorial
+    in the readme.
+*/
+
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
