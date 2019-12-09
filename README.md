@@ -81,6 +81,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## Organizations were code is borrowed from:
 - https://getbootstrap.com/docs/4.4/getting-started/introduction/
 - https://react-bootstrap.github.io/getting-started/introduction/
+- https://stripe.com/docs?utm_campaign=paid_brand-US%20|%20Search%20|%20Brand%20|%20Stripe_sitelink3-US%20%7C%20Search%20%7C%20Brand%20%7C%20Stripe-351718373&utm_medium=cpc&utm_source=bing&utm_content=&utm_term=EXA_Stripe%20Only-stripe-e&utm_adposition=&utm_device=c&msclkid=d0795a1450a218c5567a07f997e42a5d
 - Traversy Media: https://www.youtube.com/watch?v=PBTYxXADG_k&list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE (Videos 9-12 for user   authentication
 - FreeCodeCamp.org: https://www.youtube.com/watch?v=Y0-qdp-XBJg (protected routes for admin)
 ## Features Implemented
